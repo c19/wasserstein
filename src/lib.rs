@@ -20,33 +20,33 @@ mod tests {
 
     #[test]
     fn test_wasserstein_1d_0() {
-        let left = vec![2, 1, 0, 0, 3, 0, 4];
-        let right = vec![0, 5, 3, 0, 2, 0, 0];
-        let dist = wasserstein_1d(left, right).unwrap();
+        let left = array![2, 1, 0, 0, 3, 0, 4];
+        let right = array![0, 5, 3, 0, 2, 0, 0];
+        let dist = wasserstein_1d(&left.view(), &right.view()).unwrap();
         assert_eq!(dist, 22);
     }
 
     #[test]
     fn test_wasserstein_1d_1() {
-        let left = vec![2, 1, 0, 0, 3, 0, 0];
-        let right = vec![0, 2, 1, 0, 3, 0, 0];
-        let dist = wasserstein_1d(left, right).unwrap();
+        let left = array![2, 1, 0, 0, 3, 0, 0];
+        let right = array![0, 2, 1, 0, 3, 0, 0];
+        let dist = wasserstein_1d(&left.view(), &right.view()).unwrap();
         assert_eq!(dist, 3);
     }
 
     #[test]
     fn test_wasserstein_1d_2() {
-        let left = vec![2, 1, 0, 0, 3, 0, 0];
-        let right = vec![0, 2, 1, 0, 0, 3, 0];
-        let dist = wasserstein_1d(left, right).unwrap();
+        let left = array![2, 1, 0, 0, 3, 0, 0];
+        let right = array![0, 2, 1, 0, 0, 3, 0];
+        let dist = wasserstein_1d(&left.view(), &right.view()).unwrap();
         assert_eq!(dist, 6);
     }
 
     #[test]
     fn test_wasserstein_1d_3() {
-        let left = vec![2, 1, 0, 0, 3, 0, 0];
-        let right = vec![0, 0, 2, 1, 0, 0, 3];
-        let dist = wasserstein_1d(left, right).unwrap();
+        let left = array![2, 1, 0, 0, 3, 0, 0];
+        let right = array![0, 0, 2, 1, 0, 0, 3];
+        let dist = wasserstein_1d(&left.view(), &right.view()).unwrap();
         assert_eq!(dist, 12);
     }
 

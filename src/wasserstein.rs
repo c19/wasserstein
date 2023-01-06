@@ -1,9 +1,9 @@
-use ndarray::Array2;
+use ndarray::{Array2, ArrayView1};
 
 use crate::graph::{Edge, Graph, Vertex};
 use std::collections::HashMap;
 
-pub fn wasserstein_1d(left: Vec<u64>, right: Vec<u64>) -> Result<usize, String> {
+pub fn wasserstein_1d(left: &ArrayView1<u64>, right: &ArrayView1<u64>) -> Result<usize, String> {
     let total_supply: u64 = left.iter().sum();
     let total_demand: u64 = right.iter().sum();
 
